@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build the Docker image
+      run: docker build -t docker_imagen_prueba .
+      
+    #- name: Build the Docker deplow a host
+    #  run: docker run -d --name docker_contenedor_prueba -p 80:80 docker_imagen_prueba
+
+  # ESTO ES MUCHO MUY IMPORTANTE!
+    # Cuando se envien las credenciales usar los archivos
+    # secretos de github y no agregar directamente aca.
+  # ESTO ES MUCHO MUY IMPORTANTE!
