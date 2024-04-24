@@ -1,0 +1,19 @@
+version: "2.2"
+
+services:  
+  app:
+    build: .
+    container_name: "fastapi"
+    env_file:
+      - .dev.env #Archivo que nose pasa al repositorio con informacion sensible.
+    ports:
+      - "80:4000"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:4.4.6
+    container_name: "mongo"
+    ports:
+      - 27017:27017
+    volumes:
+      - ./database/init_test/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
