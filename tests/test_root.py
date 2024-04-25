@@ -1,5 +1,5 @@
 import unittest
-from app import TestedClass
+from app.app_root import *
 
 
 class TestStringMethods(unittest.TestCase):
