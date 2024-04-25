@@ -9,5 +9,9 @@ class TestStringMethods(unittest.TestCase):
     def test_read_item(self):
         self.assertEqual(read_item(12), { "item_id": 12, "q": None })
 
+    def test_true_is_true(self):
+        tester = TestedClass()
+        self.assertTrue(tester.true_method(), False)
+
 if __name__ == '__main__':
     unittest.main()
