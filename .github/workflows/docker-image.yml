@@ -38,7 +38,6 @@ jobs:
         python-version: 3.9
 
     - name: Install dependencies
-      run: pip install --upgrade pip
       run: pip install -r requirements.txt
 
     - name: Run unittest tests
