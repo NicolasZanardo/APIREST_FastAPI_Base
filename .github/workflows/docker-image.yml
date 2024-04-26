@@ -59,7 +59,9 @@ jobs:
       run: pip install -r requirements.txt
       
     - name: Install coverall
-      run: pip install coverall
+      run: pip install coveralls
 
     - name: Run unittest tests
-      run: python -m unittest discover -v
+      run: |
+        coverage run --source=mypkg -m unittest tests/
+        coveralls
