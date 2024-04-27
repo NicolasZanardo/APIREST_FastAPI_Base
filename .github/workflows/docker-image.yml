@@ -65,5 +65,5 @@ jobs:
 
     - name: Run unittest tests
       run: |
-        coverage run --source=mypkg -m unittest discover -v
+        coverage run -m unittest discover
         coveralls
