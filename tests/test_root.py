@@ -12,6 +12,3 @@ class TestStringMethods(unittest.TestCase):
     def test_true_is_true(self):
         tester = TestedClass()
         self.assertTrue(tester.true_method())
-
-if __name__ == '__main__':
-    unittest.main()
